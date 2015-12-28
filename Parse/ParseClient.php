@@ -113,9 +113,10 @@ final class ParseClient
         self::$masterKey = $master_key;
         self::$enableCurlExceptions = $enableCurlExceptions;
         if (!static::$storage) {
-            if (session_start() === TRUE) {
+            if(!isset($_SESSION)){
+            if (session_start() == TRUE) {
                 self::setStorage(new ParseSessionStorage());
-            } else {
+           }} else {
                 self::setStorage(new ParseMemoryStorage());
             }
         }
