@@ -1,7 +1,8 @@
 # parse_php5.3_sdk
 parse php sdk Library support for php 5.3
-
-
+use array() in php 5.3 in place of short tag array eg: []
+Do the rest by using the document to the link below sa mentioned:
+https://github.com/parseplatform/parse-php-sdk
 Parse PHP SDK
 -------------
 
