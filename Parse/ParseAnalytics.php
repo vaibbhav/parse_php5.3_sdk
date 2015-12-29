@@ -40,7 +40,7 @@ class ParseAnalytics
      *
      * @return mixed
      */
-    public static function track($name, $dimensions = [])
+    public static function track($name, $dimensions = array())
     {
         $name = trim($name);
 
@@ -65,9 +65,9 @@ class ParseAnalytics
     public static function _toSaveJSON($data)
     {
         return json_encode(
-            [
+            array(
                 'dimensions' => $data,
-            ],
+            ),
             JSON_FORCE_OBJECT
         );
     }

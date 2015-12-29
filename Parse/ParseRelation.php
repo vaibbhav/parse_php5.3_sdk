@@ -80,7 +80,7 @@ class ParseRelation
     public function add($objects)
     {
         if (!is_array($objects)) {
-            $objects = [$objects];
+            $objects = array($objects);
         }
         $operation = new ParseRelationOperation($objects, null);
         $this->targetClassName = $operation->_getTargetClass();
@@ -95,7 +95,7 @@ class ParseRelation
     public function remove($objects)
     {
         if (!is_array($objects)) {
-            $objects = [$objects];
+            $objects = array($objects);
         }
         $operation = new ParseRelationOperation(null, $objects);
         $this->targetClassName = $operation->_getTargetClass();

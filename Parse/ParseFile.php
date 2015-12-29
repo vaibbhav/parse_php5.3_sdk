@@ -178,11 +178,11 @@ class ParseFile implements Encodable
      */
     public function _encode()
     {
-        return [
+        return array(
             '__type' => 'File',
             'url'    => $this->url,
             'name'   => $this->name,
-        ];
+        );
     }
 
     /**
@@ -261,7 +261,7 @@ class ParseFile implements Encodable
 
     private function getMimeTypeForExtension($extension)
     {
-        $knownTypes = [
+        $knownTypes = array(
             'ai'      => 'application/postscript',
             'aif'     => 'audio/x-aiff',
             'aifc'    => 'audio/x-aiff',
@@ -450,7 +450,7 @@ class ParseFile implements Encodable
             'xwd'     => 'image/x-xwindowdump',
             'xyz'     => 'chemical/x-xyz',
             'zip'     => 'application/zip',
-        ];
+        );
 
         if (isset($knownTypes[$extension])) {
             return $knownTypes[$extension];

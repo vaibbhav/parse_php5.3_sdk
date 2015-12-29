@@ -18,7 +18,7 @@ class ParseAggregateException extends ParseException
      * @param array      $errors   Collection of error values.
      * @param \Exception $previous Previous exception.
      */
-    public function __construct($message, $errors = [], $previous = null)
+    public function __construct($message, $errors = array(), $previous = null)
     {
         parent::__construct($message, 600, $previous);
         $this->errors = $errors;

@@ -38,7 +38,7 @@ class ParseSchema
      *
      * @var array
      */
-    private $fields = [];
+    private $fields = array();
 
     /**
      * Force to use master key in Schema Methods.
@@ -132,7 +132,7 @@ class ParseSchema
     {
         self::assertClassName();
 
-        $schema = [];
+        $schema = array();
 
         $sessionToken = null;
         if (ParseUser::getCurrentUser()) {
@@ -248,9 +248,9 @@ class ParseSchema
 
         $this->assertTypes($fieldType);
 
-        $this->fields[$fieldName] = [
+        $this->fields[$fieldName] = array(
             'type' => $fieldType,
-        ];
+        );
 
         return $this;
     }
@@ -270,9 +270,9 @@ class ParseSchema
             throw new Exception('field name may not be null.');
         }
 
-        $this->fields[$fieldName] = [
+        $this->fields[$fieldName] = array(
             'type' => self::$STRING,
-        ];
+        );
 
         return $this;
     }
@@ -292,9 +292,9 @@ class ParseSchema
             throw new Exception('field name may not be null.');
         }
 
-        $this->fields[$fieldName] = [
+        $this->fields[$fieldName] = array(
             'type' => self::$NUMBER,
-        ];
+        );
 
         return $this;
     }
@@ -314,9 +314,9 @@ class ParseSchema
             throw new Exception('field name may not be null.');
         }
 
-        $this->fields[$fieldName] = [
+        $this->fields[$fieldName] = array(
             'type' => self::$BOOLEAN,
-        ];
+        );
 
         return $this;
     }
@@ -336,9 +336,9 @@ class ParseSchema
             throw new Exception('field name may not be null.');
         }
 
-        $this->fields[$fieldName] = [
+        $this->fields[$fieldName] = array(
             'type' => self::$DATE,
-        ];
+        );
 
         return $this;
     }
@@ -358,9 +358,9 @@ class ParseSchema
             throw new Exception('field name may not be null.');
         }
 
-        $this->fields[$fieldName] = [
+        $this->fields[$fieldName] = array(
             'type' => self::$FILE,
-        ];
+        );
 
         return $this;
     }
@@ -380,9 +380,9 @@ class ParseSchema
             throw new Exception('field name may not be null.');
         }
 
-        $this->fields[$fieldName] = [
+        $this->fields[$fieldName] = array(
             'type' => self::$GEO_POINT,
-        ];
+        );
 
         return $this;
     }
@@ -402,9 +402,9 @@ class ParseSchema
             throw new Exception('field name may not be null.');
         }
 
-        $this->fields[$fieldName] = [
+        $this->fields[$fieldName] = array(
             'type' => self::$ARRAY,
-        ];
+        );
 
         return $this;
     }
@@ -424,9 +424,9 @@ class ParseSchema
             throw new Exception('field name may not be null.');
         }
 
-        $this->fields[$fieldName] = [
+        $this->fields[$fieldName] = array(
             'type' => self::$OBJECT,
-        ];
+        );
 
         return $this;
     }
@@ -451,10 +451,10 @@ class ParseSchema
             throw new Exception('You need set the targetClass of the Pointer.');
         }
 
-        $this->fields[$fieldName] = [
+        $this->fields[$fieldName] = array(
             'type'        => self::$POINTER,
             'targetClass' => $targetClass,
-        ];
+        );
 
         return $this;
     }
@@ -479,10 +479,10 @@ class ParseSchema
             throw new Exception('You need set the targetClass of the Relation.');
         }
 
-        $this->fields[$fieldName] = [
+        $this->fields[$fieldName] = array(
             'type'        => self::$RELATION,
             'targetClass' => $targetClass,
-        ];
+        );
 
         return $this;
     }
@@ -498,9 +498,9 @@ class ParseSchema
      */
     public function deleteField($fieldName = null)
     {
-        $this->fields[$fieldName] = [
+        $this->fields[$fieldName] = array(
             '__op' => 'Delete',
-        ];
+        );
     }
 
     /**

@@ -83,7 +83,7 @@ class ParseRelationOperation implements FieldOperation
     private function addObjects($objects, &$container)
     {
         if (!is_array($objects)) {
-            $objects = [$objects];
+            $objects = array($objects);
         }
         foreach ($objects as $object) {
             if ($object->getObjectId() == null) {
@@ -103,7 +103,7 @@ class ParseRelationOperation implements FieldOperation
     private function removeObjects($objects, &$container)
     {
         if (!is_array($objects)) {
-            $objects = [$objects];
+            $objects = array($objects);
         }
         $nullObjects = array();
         foreach ($objects as $object) {
@@ -227,28 +227,28 @@ class ParseRelationOperation implements FieldOperation
         $addRelation = array();
         $removeRelation = array();
         if (!empty($this->relationsToAdd)) {
-            $addRelation = [
+            $addRelation = array(
                 '__op'    => 'AddRelation',
                 'objects' => ParseClient::_encode(
                     self::convertToOneDimensionalArray($this->relationsToAdd),
                     true
                 ),
-            ];
+            );
         }
         if (!empty($this->relationsToRemove)) {
-            $removeRelation = [
+            $removeRelation = array(
                 '__op'    => 'RemoveRelation',
                 'objects' => ParseClient::_encode(
                     self::convertToOneDimensionalArray($this->relationsToRemove),
                     true
                 ),
-            ];
+            );
         }
         if (!empty($addRelation) && !empty($removeRelation)) {
-            return [
+            return array(
                 '__op' => 'Batch',
-                'ops'  => [$addRelation, $removeRelation],
-            ];
+                'ops'  => array($addRelation, $removeRelation),
+            );
         }
 
         return empty($addRelation) ? $removeRelation : $addRelation;
@@ -268,7 +268,7 @@ class ParseRelationOperation implements FieldOperation
     public static function removeElementsFromArray($elements, &$array)
     {
         if (!is_array($elements)) {
-            $elements = [$elements];
+            $elements = array($elements);
         }
         $length = count($array);
         for ($i = 0; $i < $length; $i++) {

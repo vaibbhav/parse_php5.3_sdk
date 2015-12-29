@@ -18,7 +18,8 @@ class ParseSessionStorage implements ParseStorageInterface
 
     public function __construct()
     {
-        if (session_start() !== TRUE) {
+        //if (session_start() !== TRUE) {
+        if (session_start() != TRUE) {
             throw new ParseException(
                 'PHP session_start() must be called first.'
             );

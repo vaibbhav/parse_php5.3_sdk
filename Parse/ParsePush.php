@@ -46,7 +46,8 @@ class ParsePush
                 if (!isset($where_options['where'])) {
                     $data['where'] = '{}';
                 } else {
-                    $data['where'] = $data['where']->_getOptions()['where'];
+				    $dd = $data['where']->_getOptions();
+                    $data['where'] = $dd['where'];
                 }
             } else {
                 throw new Exception(
@@ -60,10 +61,11 @@ class ParsePush
             $data['push_time'] = ParseClient::getPushDateFormat($data['push_time'], isset($data['local_time']));
         }
         if (isset($data['expiration_time'])) {
-            $data['expiration_time'] = ParseClient::_encode(
+		     $cc = ParseClient::_encode(
                 $data['expiration_time'],
                 false
-            )['iso'];
+            );
+            $data['expiration_time'] = $cc['iso'];
         }
 
         return ParseClient::_request(

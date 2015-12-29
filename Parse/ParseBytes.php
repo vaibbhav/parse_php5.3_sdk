@@ -71,9 +71,9 @@ class ParseBytes implements Encodable
             $data .= chr($byte);
         }
 
-        return [
+        return array(
             '__type' => 'Bytes',
             'base64' => base64_encode($data),
-        ];
+        );
     }
 }

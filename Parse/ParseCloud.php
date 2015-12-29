@@ -18,7 +18,7 @@ class ParseCloud
      *
      * @return mixed
      */
-    public static function run($name, $data = [], $useMasterKey = false)
+    public static function run($name, $data = array(), $useMasterKey = false)
     {
         $sessionToken = null;
         if (ParseUser::getCurrentUser()) {
